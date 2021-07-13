@@ -1,5 +1,4 @@
 #include <unistd.h>
-//#include <stdio.h>//
 
 void	ft_ultimate_div_mod(int *a, int *b)
 {
@@ -10,6 +9,7 @@ void	ft_ultimate_div_mod(int *a, int *b)
 	*b = temp % *b;
 }
 /*
+#include <unistd.h>
 int	main(void)
 {
 	int	a;

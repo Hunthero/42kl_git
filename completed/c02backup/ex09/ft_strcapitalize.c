@@ -1,35 +1,41 @@
 #include <unistd.h>
-
-int	checkalphanum(char c)
+int	ft_helper(char c)
 {
-	if (c < '0')
-		return (0);
-	else if (c > '9' && c < 'A')
-		return (0);
-	else if ((c > 'Z' && c < 'a') || (c > 'z'))
-		return (0);
-	return (1);
+	char	a;
+	int		i;	
+
+	a = 0;
+	i = 0;
+	while (i > 0 && (str[a] >= '0' || str[a] > '9'))
+	{
+		c++;
+	}	
+	while (i > 0 && (str[a] < 'a' || str[a] > 'z'))
+	{				
+		c++;
+	}
 }
 
 char	*ft_strcapitalize(char *str)
 {
+	int	c;
 	int	i;
 
+	c = 0;
 	i = 0;
-	while(str[i])
-	{	
- 		while (str[i] && checkalphanum(str[i]))
-   			i++;
-		if (str[i] >= 'a' && str[i] <= 'z')
-				str[i] = (str[i]);
-		i++;
-		while (str[i] && !checkalphanum(str[i]))
-		{
-			if (str[i] >= 'A' && str[i] <= 'Z')
-					str[i] = (str[i] + 32);
-			i++;
-		}
-	}
+	while (str[c] != '\0')
+	{
+		if ((i == 0 && str[c] >= 'a') && (str[c] <= 'z'))
+			str[c] = str[c] - 32;
+		c++;
+		while (i > 0 && (str[c] >= 'A' && str[c] <= 'Z'))
+		{		
+			str[c] = str[c] + 32;
+			c++;
+		}	
+		ft_helper(c);
+	}	
+	i++;
 	return (str);
 }
 /*

@@ -1,5 +1,5 @@
 #include <unistd.h>
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+char	ft_strncpy(char *dest, char *src, unsigned int n)
 {
 	unsigned int	i;
 
@@ -14,7 +14,7 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 		dest[i] = '\0';
 		i++;
 	}
-	return (dest);
+	return (*dest);
 }
 /*
 #include <stdio.h>
